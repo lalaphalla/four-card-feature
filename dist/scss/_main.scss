@@ -1,0 +1,52 @@
+// Color
+// Primary
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+// Neutral
+$veryDarkBlue: hsl(234, 12%, 34%);
+$grayishBlue: hsl(229, 6%, 66%);
+$veryLightGray: hsl(0, 0%, 98%);
+
+// 640px 1024px 1400px
+$breakpoint-up: ("medium": "40em", "large": "64em", "xlarge": "87.5em");
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
+@mixin cardBorderColor($color) {
+  background-color: #fff;
+  border-top: 4px solid $color;
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px $grayishBlue;
+  max-width: 300px;
+  height: 270px;
+  margin: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  background-color: $veryLightGray;
+  font-family: "Poppins", sans-serif;
+}
+
+.attribution {
+    font-size: 15px;
+    color: $veryDarkBlue;
+    font-weight: 600;
+    text-align: center; 
+    margin-bottom: 10px;
+    }
+.attribution a {
+    color: $Blue;
+    text-decoration: none;
+    &:hover{
+        color: $Orange;
+    }
+}

@@ -1,0 +1,71 @@
+.container {
+  margin: 60px 40px;
+  align-items: center;
+
+  .header {
+    text-align: center;
+
+    .subtitle {
+      font-weight: 200;
+      color: $veryDarkBlue;
+    }
+    .title {
+      font-weight: 600;
+      color: $veryDarkBlue;
+    }
+    p {
+      color: $grayishBlue;
+      margin-bottom: 3rem;
+      margin: 10px auto;
+      max-width: 500px;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint-up(large) {
+      flex-direction: row;
+    }
+
+    img {
+      float: right;
+      margin: 2rem;
+    }
+
+    &--supervisor {
+      @include cardBorderColor($Cyan);
+      img {
+        text-align: right;
+      }
+      @include breakpoint-up(large) {
+        transform: translateY(50%);
+      }
+    }
+    &--team-builder {
+      @include cardBorderColor($Red);
+    }
+    &--karma {
+      order: 2;
+      @include cardBorderColor($Orange);
+    }
+    &--calculator {
+      @include breakpoint-up(large) {
+        order: 1;
+        transform: translateY(50%);
+      }
+      @include cardBorderColor($Blue);
+    }
+    h2 {
+      margin: 1.5rem 0rem 0rem 2rem;
+      color: $veryDarkBlue;
+    }
+    p {
+      margin: 0.5rem 3.5rem 0.5rem 2rem;
+      color: $grayishBlue;
+    }
+  }
+}
